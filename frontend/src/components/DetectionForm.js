@@ -60,9 +60,9 @@ const DetectionForm = ({ token, isAuthenticated, onShowAuth }) => {
         {/* Main Analysis Form */}
         <div className="lg:col-span-2">
           <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-6">
+            <div className="bg-gradient-to-r from-gray-800 to-black p-6">
               <h2 className="text-2xl font-bold text-white mb-2">Analyze News Content</h2>
-              <p className="text-blue-100">Paste any news article or claim to verify its credibility</p>
+              <p className="text-gray-100">Paste any news article or claim to verify its credibility</p>
             </div>
             
             <form onSubmit={handleSubmit} className="p-8 space-y-6">
@@ -72,7 +72,7 @@ const DetectionForm = ({ token, isAuthenticated, onShowAuth }) => {
                   onChange={(e) => setContent(e.target.value)}
                   placeholder="Paste news article, headline, or any content you want to verify..."
                   rows={12}
-                  className="w-full px-4 py-4 rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-50 placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all resize-none text-sm leading-relaxed"
+                  className="w-full px-4 py-4 rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-50 placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-500 transition-all resize-none text-sm leading-relaxed"
                 />
               </div>
 
@@ -84,7 +84,7 @@ const DetectionForm = ({ token, isAuthenticated, onShowAuth }) => {
                     value={sourceUrl}
                     onChange={(e) => setSourceUrl(e.target.value)}
                     placeholder="Source URL (optional)"
-                    className="w-full pl-12 pr-4 py-4 rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-50 placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+                    className="w-full pl-12 pr-4 py-4 rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-50 placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-500 transition-all"
                   />
                 </div>
               </div>
@@ -99,7 +99,7 @@ const DetectionForm = ({ token, isAuthenticated, onShowAuth }) => {
               <button
                 type="submit"
                 disabled={loading || !content.trim()}
-                className="w-full py-4 px-6 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-xl font-bold text-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center gap-3 shadow-xl hover:shadow-2xl transform hover:scale-[1.02] disabled:transform-none"
+                className="w-full py-4 px-6 bg-gradient-to-r from-gray-800 to-black hover:from-gray-900 hover:to-gray-800 text-white rounded-xl font-bold text-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center gap-3 shadow-xl hover:shadow-2xl transform hover:scale-[1.02] disabled:transform-none"
               >
                 {loading ? (
                   <>
@@ -116,7 +116,7 @@ const DetectionForm = ({ token, isAuthenticated, onShowAuth }) => {
               
               {!isAuthenticated && (
                 <p className="text-center text-sm text-slate-500 dark:text-slate-400 mt-2">
-                  <button onClick={onShowAuth} className="text-blue-600 hover:text-blue-700 underline">
+                  <button onClick={onShowAuth} className="text-gray-600 hover:text-gray-700 underline">
                     Sign in as admin
                   </button> to access dashboard and history
                 </p>
@@ -130,9 +130,9 @@ const DetectionForm = ({ token, isAuthenticated, onShowAuth }) => {
         {/* Recommended Sources Sidebar */}
         <div className="lg:col-span-1">
           <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-800 overflow-hidden sticky top-24">
-            <div className="bg-gradient-to-r from-green-600 to-teal-600 p-6">
+            <div className="bg-gradient-to-r from-gray-700 to-gray-800 p-6">
               <h3 className="text-xl font-bold text-white mb-2">Trusted Sources</h3>
-              <p className="text-green-100 text-sm">Verify with reliable news outlets</p>
+              <p className="text-gray-100 text-sm">Verify with reliable news outlets</p>
             </div>
             
             <div className="p-6 space-y-4">
@@ -142,13 +142,13 @@ const DetectionForm = ({ token, isAuthenticated, onShowAuth }) => {
                   href={source.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between p-4 rounded-xl border-2 border-slate-100 dark:border-slate-700 hover:border-blue-200 dark:hover:border-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950/20 transition-all group"
+                  className="flex items-center justify-between p-4 rounded-xl border-2 border-slate-100 dark:border-slate-700 hover:border-gray-300 dark:hover:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-950/20 transition-all group"
                 >
                   <div>
-                    <p className="font-semibold text-slate-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400">{source.name}</p>
+                    <p className="font-semibold text-slate-900 dark:text-slate-100 group-hover:text-gray-600 dark:group-hover:text-gray-400">{source.name}</p>
                     <p className="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wide">{source.category}</p>
                   </div>
-                  <ExternalLink size={16} className="text-slate-400 group-hover:text-blue-500" />
+                  <ExternalLink size={16} className="text-slate-400 group-hover:text-gray-500" />
                 </a>
               ))}
             </div>

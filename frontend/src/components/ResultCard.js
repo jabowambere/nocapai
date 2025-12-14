@@ -7,23 +7,23 @@ const ResultCard = ({ result }) => {
       case 'LIKELY REAL':
         return {
           icon: Check,
-          color: 'bg-green-50 dark:bg-green-950/30 border-green-200 dark:border-green-800',
-          textColor: 'text-green-900 dark:text-green-200',
-          badgeColor: 'bg-green-100 dark:bg-green-900/50 text-green-900 dark:text-green-200'
+          color: 'bg-gray-50 dark:bg-gray-950/30 border-gray-200 dark:border-gray-800',
+          textColor: 'text-gray-900 dark:text-gray-200',
+          badgeColor: 'bg-gray-100 dark:bg-gray-900/50 text-gray-900 dark:text-gray-200'
         };
       case 'LIKELY FAKE':
         return {
           icon: AlertTriangle,
-          color: 'bg-red-50 dark:bg-red-950/30 border-red-200 dark:border-red-800',
-          textColor: 'text-red-900 dark:text-red-200',
-          badgeColor: 'bg-red-100 dark:bg-red-900/50 text-red-900 dark:text-red-200'
+          color: 'bg-gray-100 dark:bg-gray-900/30 border-gray-300 dark:border-gray-700',
+          textColor: 'text-gray-900 dark:text-gray-200',
+          badgeColor: 'bg-gray-200 dark:bg-gray-800/50 text-gray-900 dark:text-gray-200'
         };
       default:
         return {
           icon: AlertCircle,
-          color: 'bg-yellow-50 dark:bg-yellow-950/30 border-yellow-200 dark:border-yellow-800',
-          textColor: 'text-yellow-900 dark:text-yellow-200',
-          badgeColor: 'bg-yellow-100 dark:bg-yellow-900/50 text-yellow-900 dark:text-yellow-200'
+          color: 'bg-gray-75 dark:bg-gray-925/30 border-gray-250 dark:border-gray-750',
+          textColor: 'text-gray-900 dark:text-gray-200',
+          badgeColor: 'bg-gray-150 dark:bg-gray-850/50 text-gray-900 dark:text-gray-200'
         };
     }
   };
@@ -56,10 +56,10 @@ const ResultCard = ({ result }) => {
           <div className="text-6xl font-bold mb-4">
             <span className={`${
               result.credibilityScore >= 70
-                ? 'text-green-500'
+                ? 'text-gray-700'
                 : result.credibilityScore >= 50
-                ? 'text-yellow-500'
-                : 'text-red-500'
+                ? 'text-gray-600'
+                : 'text-gray-500'
             }`}>{result.credibilityScore}</span>
             <span className="text-2xl text-slate-400">%</span>
           </div>
@@ -70,10 +70,10 @@ const ResultCard = ({ result }) => {
             <div
               className={`h-full transition-all duration-1500 ease-out rounded-full ${
                 result.credibilityScore >= 70
-                  ? 'bg-gradient-to-r from-green-400 to-green-600'
+                  ? 'bg-gradient-to-r from-gray-600 to-gray-700'
                   : result.credibilityScore >= 50
-                  ? 'bg-gradient-to-r from-yellow-400 to-orange-500'
-                  : 'bg-gradient-to-r from-red-400 to-red-600'
+                  ? 'bg-gradient-to-r from-gray-500 to-gray-600'
+                  : 'bg-gradient-to-r from-gray-400 to-gray-500'
               }`}
               style={{ width: `${result.credibilityScore}%` }}
             />

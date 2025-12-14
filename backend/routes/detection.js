@@ -1,6 +1,7 @@
 const express = require('express');
 const { protect } = require('../middleware/auth');
 const mongoose = require('mongoose');
+const axios = require('axios');
 
 const router = express.Router();
 
@@ -35,7 +36,10 @@ const newsDatabase = {
     untrusted: ['unknown source', 'anonymous source', 'viral posts', 'social media claims']
   }
 };
-
+const response = await axios.post(
+  'http://localhost:8000/analyze',
+  {text}
+);
 // Detection route (public)
 router.post('/analyze', async (req, res) => {
   const { text, sourceUrl } = req.body;

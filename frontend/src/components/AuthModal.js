@@ -120,7 +120,7 @@ const AuthModal = ({ isOpen, onClose, onAuth }) => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg font-semibold disabled:opacity-50 flex items-center justify-center gap-2"
+            className="w-full py-3 px-4 bg-gradient-to-r from-gray-800 to-black hover:from-gray-900 hover:to-gray-800 text-white rounded-lg font-semibold disabled:opacity-50 flex items-center justify-center gap-2"
           >
             {loading ? (
               'Loading...'
@@ -136,7 +136,7 @@ const AuthModal = ({ isOpen, onClose, onAuth }) => {
             <button
               type="button"
               onClick={() => setIsLogin(!isLogin)}
-              className="text-blue-600 hover:text-blue-700 text-sm"
+              className="text-gray-600 hover:text-gray-700 text-sm"
             >
               {isLogin ? "Don't have an account? Sign up" : "Already have an account? Sign in"}
             </button>

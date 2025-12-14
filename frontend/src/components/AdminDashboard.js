@@ -61,8 +61,8 @@ const AdminDashboard = ({ token }) => {
             </p>
           )}
         </div>
-        <div className={`w-12 h-12 rounded-xl bg-${color}-100 dark:bg-${color}-900/20 flex items-center justify-center`}>
-          <Icon className={`text-${color}-600 dark:text-${color}-400`} size={24} />
+        <div className={`w-12 h-12 rounded-xl bg-gray-100 dark:bg-gray-900/20 flex items-center justify-center`}>
+          <Icon className={`text-gray-600 dark:text-gray-400`} size={24} />
         </div>
       </div>
     </div>
@@ -70,9 +70,9 @@ const AdminDashboard = ({ token }) => {
 
   const getVerdictBadge = (verdict) => {
     const configs = {
-      'LIKELY REAL': 'bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-400',
-      'LIKELY FAKE': 'bg-red-100 text-red-800 dark:bg-red-900/20 dark:text-red-400',
-      'UNCERTAIN': 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/20 dark:text-yellow-400'
+      'LIKELY REAL': 'bg-gray-100 text-gray-800 dark:bg-gray-900/20 dark:text-gray-400',
+      'LIKELY FAKE': 'bg-gray-200 text-gray-900 dark:bg-gray-800/20 dark:text-gray-300',
+      'UNCERTAIN': 'bg-gray-150 text-gray-700 dark:bg-gray-850/20 dark:text-gray-350'
     };
     return configs[verdict] || configs['UNCERTAIN'];
   };
@@ -98,9 +98,9 @@ const AdminDashboard = ({ token }) => {
           <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-100">Admin Dashboard</h1>
           <p className="text-slate-600 dark:text-slate-400 mt-1">Monitor system performance and analytics</p>
         </div>
-        <div className="flex items-center gap-2 px-4 py-2 bg-green-100 dark:bg-green-900/20 rounded-xl">
-          <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-          <span className="text-sm font-medium text-green-700 dark:text-green-400">System Online</span>
+        <div className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-900/20 rounded-xl">
+          <div className="w-2 h-2 bg-gray-500 rounded-full animate-pulse"></div>
+          <span className="text-sm font-medium text-gray-700 dark:text-gray-400">System Online</span>
         </div>
       </div>
 
@@ -112,28 +112,28 @@ const AdminDashboard = ({ token }) => {
             value={stats.total}
             icon={BarChart3}
             trend="+12% this week"
-            color="blue"
+            color="gray"
           />
           <StatCard
             title="Verified Real"
             value={stats.realNews}
             icon={CheckCircle}
             trend={`${Math.round((stats.realNews / stats.total) * 100)}% accuracy`}
-            color="green"
+            color="gray"
           />
           <StatCard
             title="Detected Fake"
             value={stats.fakeNews}
             icon={AlertTriangle}
             trend={`${Math.round((stats.fakeNews / stats.total) * 100)}% flagged`}
-            color="red"
+            color="gray"
           />
           <StatCard
             title="Avg Confidence"
             value={`${Math.round(stats.averageScore)}%`}
             icon={TrendingUp}
             trend="+5% improvement"
-            color="purple"
+            color="gray"
           />
         </div>
       )}
@@ -189,7 +189,7 @@ const AdminDashboard = ({ token }) => {
           <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
             <div className="p-6 border-b border-slate-200 dark:border-slate-800">
               <div className="flex items-center gap-3">
-                <Zap className="text-purple-600 dark:text-purple-400" size={20} />
+                <Zap className="text-gray-600 dark:text-gray-400" size={20} />
                 <h3 className="font-semibold text-slate-900 dark:text-slate-100">AI System</h3>
               </div>
             </div>
@@ -197,22 +197,22 @@ const AdminDashboard = ({ token }) => {
               <div className="flex items-center justify-between">
                 <span className="text-sm text-slate-600 dark:text-slate-400">Detection Engine</span>
                 <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-sm font-medium text-green-600 dark:text-green-400">Active</span>
+                  <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
+                  <span className="text-sm font-medium text-gray-600 dark:text-gray-400">Active</span>
                 </div>
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-sm text-slate-600 dark:text-slate-400">Pattern Analysis</span>
                 <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-sm font-medium text-green-600 dark:text-green-400">Online</span>
+                  <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
+                  <span className="text-sm font-medium text-gray-600 dark:text-gray-400">Online</span>
                 </div>
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-sm text-slate-600 dark:text-slate-400">Source Verification</span>
                 <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-sm font-medium text-green-600 dark:text-green-400">Ready</span>
+                  <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
+                  <span className="text-sm font-medium text-gray-600 dark:text-gray-400">Ready</span>
                 </div>
               </div>
             </div>
@@ -226,19 +226,19 @@ const AdminDashboard = ({ token }) => {
             <div className="p-6 space-y-3">
               <button className="w-full px-4 py-3 text-left rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
                 <div className="flex items-center gap-3">
-                  <Shield className="text-blue-600 dark:text-blue-400" size={16} />
+                  <Shield className="text-gray-600 dark:text-gray-400" size={16} />
                   <span className="text-sm font-medium">Run System Check</span>
                 </div>
               </button>
               <button className="w-full px-4 py-3 text-left rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
                 <div className="flex items-center gap-3">
-                  <Database className="text-green-600 dark:text-green-400" size={16} />
+                  <Database className="text-gray-600 dark:text-gray-400" size={16} />
                   <span className="text-sm font-medium">Export Data</span>
                 </div>
               </button>
               <button className="w-full px-4 py-3 text-left rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
                 <div className="flex items-center gap-3">
-                  <Clock className="text-purple-600 dark:text-purple-400" size={16} />
+                  <Clock className="text-gray-600 dark:text-gray-400" size={16} />
                   <span className="text-sm font-medium">View Logs</span>
                 </div>
               </button>

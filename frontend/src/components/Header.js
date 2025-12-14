@@ -7,11 +7,11 @@ const Header = ({ isDark, setIsDark, currentPath, navigate, isAuthenticated, onS
       <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-3 cursor-pointer" onClick={() => navigate('/')}>
-            <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
+            <div className="w-12 h-12 bg-gradient-to-br from-gray-800 to-black rounded-2xl flex items-center justify-center shadow-lg">
               <Shield className="text-white" size={24} />
             </div>
             <div>
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Nocap AI</h1>
+              <h1 className="text-2xl font-bold bg-gradient-to-r from-gray-800 to-black bg-clip-text text-transparent">Nocap AI</h1>
               <span className="text-xs text-slate-500 dark:text-slate-400">{isAuthenticated ? 'Admin Dashboard' : 'Truth Verification'}</span>
             </div>
           </div>
@@ -23,7 +23,7 @@ const Header = ({ isDark, setIsDark, currentPath, navigate, isAuthenticated, onS
                 onClick={() => navigate('/admin')}
                 className={`px-4 py-2 rounded-xl font-semibold transition-all ${
                   currentPath === '/admin'
-                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
+                    ? 'bg-gradient-to-r from-gray-800 to-black text-white shadow-lg'
                     : 'hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400'
                 }`}
               >
@@ -33,7 +33,7 @@ const Header = ({ isDark, setIsDark, currentPath, navigate, isAuthenticated, onS
                 onClick={() => navigate('/history')}
                 className={`px-4 py-2 rounded-xl font-semibold transition-all flex items-center gap-2 ${
                   currentPath === '/history'
-                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
+                    ? 'bg-gradient-to-r from-gray-800 to-black text-white shadow-lg'
                     : 'hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400'
                 }`}
               >
@@ -56,7 +56,7 @@ const Header = ({ isDark, setIsDark, currentPath, navigate, isAuthenticated, onS
           ) : (
             <button
               onClick={onShowAuth}
-              className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all"
+              className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-gray-800 to-black text-white rounded-xl font-semibold hover:from-gray-900 hover:to-gray-800 transition-all"
             >
               <LogIn size={16} />
               <span>Sign In</span>
