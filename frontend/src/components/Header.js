@@ -11,7 +11,7 @@ const Header = ({ isDark, setIsDark, currentPath, navigate, isAuthenticated, onS
               <Shield className="text-white" size={24} />
             </div>
             <div>
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-gray-800 to-black bg-clip-text text-transparent">Nocap AI</h1>
+              <h1 className="text-2xl font-bold text-white">Nocap AI</h1>
               <span className="text-xs text-slate-500 dark:text-slate-400">{isAuthenticated ? 'Admin Dashboard' : 'Truth Verification'}</span>
             </div>
           </div>
