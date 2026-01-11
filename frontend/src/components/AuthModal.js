@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, User, Mail, Lock, LogIn, UserPlus } from 'lucide-react';
+import Loader from './Loader';
 
 const AuthModal = ({ isOpen, onClose, onAuth }) => {
   const [isLogin, setIsLogin] = useState(true);
@@ -123,7 +124,10 @@ const AuthModal = ({ isOpen, onClose, onAuth }) => {
             className="w-full py-3 px-4 bg-gradient-to-r from-gray-800 to-black hover:from-gray-900 hover:to-gray-800 text-white rounded-lg font-semibold disabled:opacity-50 flex items-center justify-center gap-2"
           >
             {loading ? (
-              'Loading...'
+              <div className="flex items-center gap-2">
+                <Loader size={20} className="text-white" />
+                <span>Processing...</span>
+              </div>
             ) : (
               <>
                 {isLogin ? <LogIn size={18} /> : <UserPlus size={18} />}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Trash2, Loader2, AlertCircle } from 'lucide-react';
+import Loader from './Loader';
 
 const History = ({ token }) => {
   const [analyses, setAnalyses] = useState([]);
@@ -93,7 +94,7 @@ const History = ({ token }) => {
       <section className="max-w-6xl mx-auto px-4 py-12">
         <div className="flex justify-center items-center h-96">
           <div className="text-center">
-            <Loader2 className="animate-spin mx-auto mb-4" size={32} />
+            <Loader size={32} className="mx-auto mb-4" />
             <p>Loading analysis history...</p>
           </div>
         </div>

@@ -9,7 +9,7 @@ import AuthModal from './components/AuthModal';
 import AdminDashboard from './components/AdminDashboard';
 
 function AppContent() {
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [showAuthModal, setShowAuthModal] = useState(false);
   const [token, setToken] = useState(null);
